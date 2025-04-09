@@ -1,0 +1,6 @@
+TASK_CREATED = "Tarefa criada com sucesso!"
+TASK_UPDATED = "Tarefa atualizada com sucesso!"
+TASK_DELETED = "Tarefa deletada com sucesso!"
+ALL_TASKS_DELETED = "Todas as tarefas foram deletadas com sucesso!"
+TASK_NOT_FOUND = "Tarefa não encontrada"
+INVALID_DATA = "Dados inválidos"

@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+
+# Pytest cache
+.pytest_cache/
+
+# Virtual environment
+venv/
+ENV/
+env/
+
+# Config do VSCode e outras ide's
+.vscode/
+.idea/
+.DS_Store
+
+# Log / Coverage / Build
+*.log
+coverage/
+build/
+dist/
+
+# Variaveis de Ambiente
+.env
+.env.*
