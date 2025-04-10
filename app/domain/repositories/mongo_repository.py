@@ -59,4 +59,7 @@ def delete_task(task_id: str) -> int:
     return result.deleted_count
 
 def delete_all_tasks():
+    """
+    Deleta todas as tarefas do Banco
+    """
     tasks_collection.delete_many({})
