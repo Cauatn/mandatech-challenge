@@ -82,6 +82,8 @@ pip install -r requirements.txt
 
 ## 4. Configure o .env
 
+Por favor, coloque as credenciais do MONGODB no arquivo .env, caso queira o banco de testes, enviei via E-mail.
+
 ```bash
 python setup_env.py
 ```
