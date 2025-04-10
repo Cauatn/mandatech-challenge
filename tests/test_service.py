@@ -1,5 +1,5 @@
 import pytest
-from app.application.task_service import (
+from app.domain.services.task_service import (
     create_task_service,
     list_tasks_service,
     get_task_service,

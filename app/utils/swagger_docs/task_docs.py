@@ -6,7 +6,7 @@ from app.utils.messages import (
     TASK_NOT_FOUND,
     INVALID_DATA,
 )
-from app.schemas.task_schema import TaskSchema
+from app.domain.schemas.task_schema import TaskSchema
 
 create_task_doc = {
     'tags': ['Tasks'],

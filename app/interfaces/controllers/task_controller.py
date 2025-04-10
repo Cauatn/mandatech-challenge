@@ -1,10 +1,10 @@
 from flask import Blueprint
-from app.interfaces.routes.create_task_route import create_task
-from app.interfaces.routes.list_tasks_route import list_tasks
-from app.interfaces.routes.get_task_route import get_task
-from app.interfaces.routes.update_task_route import update_task
-from app.interfaces.routes.delete_task_route import delete_task
-from app.interfaces.routes.delete_all_task_route import delete_all_tasks
+from app.domain.services.tasks.create_task_service import create_task
+from app.domain.services.tasks.list_tasks_service import list_tasks
+from app.domain.services.tasks.get_task_service import get_task
+from app.domain.services.tasks.update_task_service import update_task
+from app.domain.services.tasks.delete_task_service import delete_task
+from app.domain.services.tasks.delete_all_task_service import delete_all_tasks
 
 task_bp = Blueprint("tasks", __name__)
 
