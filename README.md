@@ -44,7 +44,7 @@ mandatech-challenge/
 ## 1. Clone o repositorio
 ```bash
 git clone https://github.com/cauatn/mandatech-challenge.git
-cd seu-repositorio
+cd .\mandatech-challenge\
 ```
 ## 2. Crie um ambiente virtual
 ```bash
