@@ -17,28 +17,42 @@ Permite que usuários possam **criar, visualizar, atualizar e deletar tarefas**,
 
 ---
 
-## Estrutura de Pastas
+## 📁 Estrutura de pastas
 
-Como dito foi utilizado uma estrutura de pastas no padrão DDD, a seguir uma explicação de cada pasta e arquivo utilizado.
-
-```text
+````text
 mandatech-challenge/
 │
-├── app/
-│   ├── application/        # Camada de aplicação (serviços)
-│   ├── infrastructure/     # Acesso ao banco MongoDB
-│   ├── interfaces/         # Rotas (API)
-│   ├── schemas/            # Schemas de validação com Pydantic
-│   └── utils/              # Mensagens e constantes reutilizáveis
+├── app/                        # Código principal da aplicação
+│   ├── domain/                 # Camada de domínio (regras de negócio)
+│   │   ├── repositories/       # Acesso ao banco de dados (MongoDB)
+│   │   │   └── mongo_repository.py
+│   │   ├── schemas/            # Schemas de validação com Pydantic
+│   │   │   └── task_schema.py
+│   │   └── services/           # Lógica de negócio (use cases)
+│   │       ├── tasks/          # Funções específicas por entidade
+│   │       └── task_service.py
+│   │
+│   ├── interfaces/             # Camada de apresentação (rotas/controllers)
+│   │   └── controllers/        # Endpoints REST
+│   │
+│   └── utils/                  # Utilitários e mensagens reutilizáveis
+│       ├── messages.py         # Mensagens fixas da aplicação
+│       └── swagger_docs/       # Documentação Swagger por endpoint
 │
-├── tests/                  # Testes automatizados com pytest
-├── main.py                 # Arquivo principal da aplicação Flask
-├── config.py               # Configuração (ex: URI do MongoDB)
-├── requirements.txt        # Dependências
-├── .env                    # Variáveis de ambiente (não versionar)
-├── pytest.ini              # Configuração para pytest
-└── README.md               # Este arquivo
-```
+├── tests/                      # Testes automatizados (Pytest)
+│   ├── test_routes.py
+│   └── test_service.py
+│
+├── venv/                       # Ambiente virtual Python (não versionar)
+│
+├── .env                        # Variáveis de ambiente (config local)
+├── .gitignore                  # Arquivos e pastas ignoradas pelo Git
+├── config.py                   # Configurações globais (ex: URI do MongoDB)
+├── main.py                     # Ponto de entrada da aplicação Flask
+├── pytest.ini                  # Configuração do Pytest
+├── requirements.txt            # Dependências
+└── README.md                   # Este arquivo
+
 
 # Como Executar ?
 
@@ -47,7 +61,7 @@ mandatech-challenge/
 ```bash
 git clone https://github.com/cauatn/mandatech-challenge.git
 cd .\mandatech-challenge\
-```
+````
 
 ## 2. Crie um ambiente virtual
 
