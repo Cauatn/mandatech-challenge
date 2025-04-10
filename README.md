@@ -39,35 +39,44 @@ mandatech-challenge/
 ├── pytest.ini              # Configuração para pytest
 └── README.md               # Este arquivo
 ```
+
 # Como Executar ?
 
 ## 1. Clone o repositorio
+
 ```bash
 git clone https://github.com/cauatn/mandatech-challenge.git
 cd .\mandatech-challenge\
 ```
+
 ## 2. Crie um ambiente virtual
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/macOS
 venv\Scripts\activate     # Windows
 ```
+
 ## 3. Instale as dependências
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## 4. Configure o .env
+
 ```bash
-MONGO_URI=mongodb+srv://<usuario>:<senha>@cluster.mongodb.net
-DATABASE_NAME=taskdb
+python setup_env.py
 ```
+
 ## 5. Rode a aplicação
+
 ```bash
 python main.py
 ```
 
 # Documentação Swagger
+
 Acesse a interface Swagger em:
 
 ```
