@@ -89,9 +89,17 @@ python setup_env.py
 python main.py
 ```
 
+## 6. Acesse ela em:
+
+A Api pode ser verificada com POSTMAN ou soluções alternativas em:
+
+```
+http://localhost:5000/tasks
+```
+
 # Documentação Swagger
 
-Acesse a interface Swagger em:
+Acesse a interface Swagger em, para fazer as requisições ou simplismente validar todas as rotas, como não existe login, não será necessario nenhuma chave JWT para que funcione o app:
 
 ```
 http://localhost:5000/apidocs
