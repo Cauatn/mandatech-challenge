@@ -1,4 +1,4 @@
-from app.infrastructure.mongo_repository import (
+from app.domain.repositories.mongo_repository import (
     insert_task,
     get_all_tasks,
     get_task,

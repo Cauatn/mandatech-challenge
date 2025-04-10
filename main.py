@@ -1,6 +1,6 @@
 from flask import Flask
 from flasgger import Swagger
-from app.interfaces.routes import task_bp
+from app.interfaces.controllers.task_controller import task_bp
 
 def create_app():
     app = Flask(__name__)

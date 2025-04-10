@@ -2,7 +2,7 @@ import pytest
 from main import create_app
 from flask import json
 from flask import Flask
-from app.interfaces.routes import task_bp
+from app.interfaces.controllers.task_controller import task_bp
 
 @pytest.fixture
 def client():
