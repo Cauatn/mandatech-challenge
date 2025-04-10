@@ -19,7 +19,7 @@ Permite que usuários possam **criar, visualizar, atualizar e deletar tarefas**,
 
 ## Estrutura de pastas
 
-````text
+```text
 mandatech-challenge/
 │
 ├── app/                        # Código principal da aplicação
@@ -52,7 +52,7 @@ mandatech-challenge/
 ├── pytest.ini                  # Configuração do Pytest
 ├── requirements.txt            # Dependências
 └── README.md                   # Este arquivo
-
+```
 
 # Como Executar ?
 
