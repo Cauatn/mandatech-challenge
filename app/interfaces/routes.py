@@ -28,7 +28,6 @@ task_bp = Blueprint("tasks", __name__)
         'in': 'body',
         'name': 'body',
         'required': True,
-        # Usa o modelo JSON gerado pelo Pydantic como schema
         'schema': TaskSchema.model_json_schema()
     }],
     'responses': {
@@ -107,7 +106,34 @@ def get_task(task_id):
             'in': 'body',
             'name': 'body',
             'required': True,
-            'schema': TaskUpdateSchema.model_json_schema()
+            'schema': {
+                'type': 'object',
+                'properties': {
+                    'in_progress': {
+                        'type': 'boolean',
+                        'example': True,
+                        'description': 'Se true, atualiza o status para "in_progress"; se false, para "pending".'
+                    },
+                    'done': {
+                        'type': 'boolean',
+                        'example': True,
+                        'description': 'Se true, atualiza o status para "done"; se false, para "pending".'
+                    },
+                    'title': {
+                        'type': 'string',
+                        'example': 'Comprar leite'
+                    },
+                    'description': {
+                        'type': 'string',
+                        'example': 'Ir ao supermercado e comprar leite'
+                    }
+                },
+                'additionalProperties': False,
+                'description': (
+                    "Envie a chave 'in_progress' ou 'done' para atualizar o status. "
+                    "Caso ambas estejam ausentes, os demais campos serão validados via TaskUpdateSchema."
+                )
+            }
         }
     ],
     'responses': {
@@ -118,7 +144,19 @@ def get_task(task_id):
 })
 def update_task(task_id):
     try:
-        update_data = TaskUpdateSchema(**request.json).model_dump(exclude_none=True)
+        json_data = request.json or {}
+        update_data = {}
+        
+        # Caso seja enviado no body da requisição "in_progress":
+        if "in_progress" in json_data:
+            update_data["status"] = "in_progress" if json_data["in_progress"] else "pending"
+        # Caso seja enviado "done", trata esse caso:
+        elif "done" in json_data:
+            update_data["status"] = "done" if json_data["done"] else "pending"
+        else:
+            # Se nada for enviado, utiliza o esquema padrão para outros campos.
+            update_data = TaskUpdateSchema(**json_data).model_dump(exclude_none=True)
+        
         update_task_service(task_id, update_data)
         return jsonify({"message": TASK_UPDATED}), 200
     except ValidationError as e:
