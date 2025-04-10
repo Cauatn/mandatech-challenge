@@ -4,11 +4,10 @@ Este projeto é uma API RESTful desenvolvida com **Flask + MongoDB**, estruturad
 
 Permite que usuários possam **criar, visualizar, atualizar e deletar tarefas**, com suporte a status, filtros, testes automatizados e documentação interativa utilizando Flasgger.
 
-## 🐳 Rodando com Docker
+## Rodando com Docker  🐳
 
-👉 [Clique aqui para o uso com Docker](#como-executar-com-docker)
-
----
+Caso o fast link não funciona está no rodape do read.me as instruções.
+[Clique aqui para o uso com Docker](#como-executar-com-docker)
 
 ## Funcionalidades
 
@@ -108,8 +107,8 @@ Acesse a interface Swagger em, para fazer as requisições ou simplismente valid
 ```
 http://localhost:5000/apidocs
 ```
-
-## 🐳 Como Executar com Docker
+<a name="como-executar-com-docker"></a>
+## Como Executar com Docker
 
 1. **Crie o arquivo `.env`** (ou use o `setup_env.py`):
 
