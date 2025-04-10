@@ -17,7 +17,7 @@ Permite que usuários possam **criar, visualizar, atualizar e deletar tarefas**,
 
 ---
 
-## 📁 Estrutura de pastas
+## Estrutura de pastas
 
 ````text
 mandatech-challenge/
