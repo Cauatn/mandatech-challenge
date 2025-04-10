@@ -4,6 +4,10 @@ Este projeto é uma API RESTful desenvolvida com **Flask + MongoDB**, estruturad
 
 Permite que usuários possam **criar, visualizar, atualizar e deletar tarefas**, com suporte a status, filtros, testes automatizados e documentação interativa utilizando Flasgger.
 
+## 🐳 Rodando com Docker
+
+👉 [Clique aqui para o uso com Docker](#como-executar-com-docker)
+
 ---
 
 ## Funcionalidades
@@ -61,7 +65,7 @@ mandatech-challenge/
 ```bash
 git clone https://github.com/cauatn/mandatech-challenge.git
 cd .\mandatech-challenge\
-````
+```
 
 ## 2. Crie um ambiente virtual
 
@@ -104,3 +108,24 @@ Acesse a interface Swagger em, para fazer as requisições ou simplismente valid
 ```
 http://localhost:5000/apidocs
 ```
+
+## 🐳 Como Executar com Docker
+
+1. **Crie o arquivo `.env`** (ou use o `setup_env.py`):
+
+Por favor, setar corrretamente as variaveis de ambiente.
+
+```bash
+python setup_env.py
+```
+
+2. Construa e suba os containers:
+
+```bash
+docker-compose up --build
+```
+
+Acesse normalmente a aplicação:
+
+API: http://localhost:5000/tasks
+Swagger: http://localhost:5000/apidocs
